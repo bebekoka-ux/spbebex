@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="鶯高祭1年5組の公開ルーレットアプリ。0〜36の抽選、PDFルール準拠の配当表示、約25秒の回転演出に対応。">
+  <title>1-5 ROULETTE | ざわ…ざわ…</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23080808'/%3E%3Ccircle cx='16' cy='16' r='12' fill='%23bd1725' stroke='%23d6ad55' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23080808'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=rules-payout-large-20260930">
+</head>
+<body class="kiosk">
+  <div class="atmosphere" aria-hidden="true">
+    <span class="zawa zawa-1">ざわ…</span>
+    <span class="zawa zawa-2">ざわ…</span>
+    <span class="zawa zawa-3">ざわ…</span>
+    <span class="zawa zawa-4">ざわ…</span>
+    <span class="zawa zawa-5">ざわ…</span>
+    <span class="zawa zawa-6">ざわ…</span>
+  </div>
+
+  <main class="casino-app">
+    <header class="game-masthead">
+      <div class="class-brand" aria-label="鶯高祭 1年5組 ざわざわルーレット">
+        <div class="brand-kicker">鶯高祭 CASINO</div>
+        <div class="number-logo" data-text="1-5">1-5</div>
+        <div class="brand-copy">
+          <strong>ざわ…ざわ…</strong>
+          <span>運命の一球、その行方を見届けろ。</span>
+        </div>
+      </div>
+      <div class="masthead-actions">
+        <span class="live-badge"><i></i> ROULETTE LIVE</span>
+        <button class="utility-button" type="button" data-fullscreen>全画面 <kbd>F</kbd></button>
+      </div>
+    </header>
+
+    <section class="arena">
+      <section class="wheel-panel" aria-label="ルーレット台">
+        <div class="panel-caption">
+          <span>1-5 ORIGINAL ROULETTE</span>
+          <strong>0—36 / ルール表対応</strong>
+        </div>
+        <div class="roulette-canvas-wrap">
+          <canvas class="roulette-canvas" id="roulette-canvas" role="img" aria-label="0から36までの1年5組ルーレット"></canvas>
+          <div class="roulette-pointer" aria-hidden="true"></div>
+          <div class="roulette-phase" id="phase">BETTING OPEN / ベット受付中</div>
+        </div>
+        <div class="tension-track" aria-hidden="true"><span id="tension-bar"></span></div>
+      </section>
+
+      <aside class="command-panel" aria-label="当選結果と操作">
+        <section class="result-card" aria-live="polite">
+          <div class="result-heading"><span>LATEST RESULT</span><strong id="spin-count">SPIN 0</strong></div>
+          <div class="result-main">
+            <div class="result-number" id="result-number">—</div>
+            <div class="result-copy"><small>WINNING NUMBER / AREA</small><strong id="result">ベット受付中</strong></div>
+          </div>
+          <div class="rule-strip">ディーラーの合図でベット ／ 開始後はチップを動かさない</div>
+        </section>
+
+        <button class="spin-button" id="spin" type="button" data-primary>
+          <span class="key-action">5</span>
+          <span class="spin-label">運命を回す</span>
+          <span class="spin-arrow" aria-hidden="true">▶</span>
+        </button>
+
+        <section class="odds-card" aria-label="受取倍率">
+          <div class="odds-heading"><span>PAYOUT</span><strong>ルール表の配当</strong></div>
+          <div class="odds-grid">
+            <div><span>数字 1〜36</span><strong>×40</strong><small>+39</small></div>
+            <div><span>RED（赤）</span><strong>×2</strong><small>+1</small></div>
+            <div><span>BLACK（黒）</span><strong>×2</strong><small>+1</small></div>
+            <div><span>0（ゼロ）</span><strong>×2</strong><small>+1</small></div>
+            <div><span>ODD（奇数）</span><strong>×2</strong><small>+1</small></div>
+            <div><span>EVEN（偶数）</span><strong>×2</strong><small>+1</small></div>
+          </div>
+          <p>倍率は受取合計。右下は元チップを置いたまま追加する枚数。</p>
+        </section>
+
+        <section class="history-card">
+          <div class="history-title"><span>直近の結果</span><strong>DEALER CALL</strong></div>
+          <div class="history" id="history" aria-label="直近の結果"></div>
+        </section>
+
+        <footer class="operator-bar">
+          <span><kbd>5</kbd> / <kbd>Enter</kbd> / <kbd>Space</kbd> 回す</span>
+          <button id="reset" type="button" data-reset>履歴リセット <kbd>R</kbd></button>
+        </footer>
+      </aside>
+    </section>
+  </main>
+
+  <script src="scripts/common.js"></script>
+  <script src="scripts/roulette.js?v=spin-25s-20260930"></script>
+</body>
+</html>
+
